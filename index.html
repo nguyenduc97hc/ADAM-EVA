@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam-Eva</title>
+</head>
+<body>
+    <script>
+        let apple = function (weight) {
+            this.weight = weight;
+            this.decreaseEnergy = function () {
+                if (this.weight !==0) {
+                    this.weight--;
+                }
+            };
+            this.isEmpty = function () {
+                if(this.weight===0){
+                    return true;
+                }else return false;
+            };
+            this.getWeight = function () {
+                return this.weight;
+            }
+        };
+        let husman = function (name,gender,weight) {
+            this.name = name;
+            this.weight = weight;
+            this.gender = true;
+            
+            this.setGender = function (gender) {
+                this.gender = gender;
+            };
+            this.checkApple = function (apple) {
+                return apple.isEmpty();
+            };
+            this.eat = function (apple) {
+                if (this.checkApple(apple)){
+                    alert("hết");
+                } else {
+                    apple.decreaseEnergy();
+                    this.weight++;
+                }
+            };
+            this.say = function (message) {
+                alert(message);
+            };
+            this.getName = function () {
+                return this.name;
+            };
+            this.setName = function (name) {
+                this.name = name;
+            };
+            this.getWeight = function () {
+                return this.weight;
+            };
+            this.setWeight = function (weight) {
+                this.weight = weight;
+            }
+        };
+        let apple1 = new apple(10);
+        let Adam = new husman("Adam",true,60);
+        let Eva = new husman("Eva",false,45);
+        Adam.say("Eva ăn táo đi");
+        Eva.eat(apple1);
+        alert(apple1.getWeight());
+        Eva.say("Adam cũng ăn đi");
+        Adam.eat(apple1);
+        alert(apple1.getWeight());
+        alert(Adam.getWeight());
+        alert(Eva.getWeight());
+
+    </script>
+</body>
+</html>
